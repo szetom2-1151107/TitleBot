@@ -33,7 +33,7 @@ export const WebsiteCard = ({
       />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left', padding: '12px' }}>
         <Typography variant='h6'>{title}</Typography>
-        <Typography variant='subtitle1' color='text.secondar'>{url}</Typography>
+        <Typography variant='subtitle1' color='text.secondary'>{url}</Typography>
       </CardContent>
     </Card>
   );

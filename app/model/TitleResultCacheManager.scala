@@ -1,8 +1,12 @@
 package model
 
 import java.util.concurrent.ConcurrentHashMap
-import javax.inject.Singleton
 
+/**
+ * Global cache that is used to store the TitleResult information of requested urls.
+ * This allows for intelligent API requests, so we don't have to make API requests if we have
+ * already made that request before.
+ */
 object TitleResultCacheManager {
 
   private case class CacheKey(url: String)

@@ -28,6 +28,8 @@ const App = () => {
     try {
       res = await fetch(`http://localhost:9000/getWebsiteInfo?url=${url}`);
     } catch (error) {
+      // fetch fails, assuming that there was a connection problem with the backend. We can also show the message
+      // of the error thrown.
       setErrorMsg('Error connecting to APIServer');
     }
 
@@ -37,6 +39,7 @@ const App = () => {
       setDataList(newDataList);
       localStorage.setItem(localStorageDataKey, JSON.stringify(newDataList));
     } else if (res?.ok === false) {
+      // If we decide to support more fine grained error messaging, we can retrieve the error message from res instead
       setErrorMsg('Invalid URL');
     }
     setIsDataLoading(false);

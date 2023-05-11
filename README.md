@@ -8,13 +8,15 @@ Take home assignment for https://github.com/chatmeter/titlebot
 4. Navigate to `localhost:3000` to view the project UI
 
 ---
-## Assumptions
-Due to the recommended time box of 4 hours and minimal project description, I have made the following assumptions:
+## Assumptions and Addional Requirements
+Due to the recommended time box of 4 hours and minimal project description, I have made the following assumptions and constrained requirements:
 
-1. The backend server can handle multiple clients at the same time, but is not scalable as a single service.
+1. The backend server can handle multiple clients at the same time, but is not expected to scale as a single service.
 2. A single user will only have a small history of persisted website information.
-3. External websites will always return a valid response (favicon and title).
-4. Users can enter invalid urls into the form.
+3. Data history can only be added to (no deletion, re-ordering, etc).
+4. External websites will always return a response.
+5. Users can enter invalid urls into the form (no form validation).
+6. Only simple error messaging is expected.
 
 ## Design
 Based of the above assumptions I have created the following design:

@@ -52,6 +52,9 @@ class TitleBotController @Inject()(implicit ec: ExecutionContext, ws: WSClient, 
               val res = TitleResult(title, favicon)
               TitleResultCacheManager.put(urlStr, res)
               Ok(Json.toJson(res))
+
+            // For more extensive error messaging, we can flesh out this case statements with different failures
+            // and what the message we send to the UI could be
             case _ => BadRequest("Invalid Url")
           }
         }
@@ -66,6 +69,7 @@ class TitleBotController @Inject()(implicit ec: ExecutionContext, ws: WSClient, 
       if (response.status == 200) {
         Success(onSuccess(response))
       } else {
+        // For more extensive error messaging, we can return different Failures based on the response status
         Failure(new Throwable("Unable to retrieve Data from website"))
       }
     }
