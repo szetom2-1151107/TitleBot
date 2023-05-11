@@ -1,0 +1,17 @@
+services:
+  client:
+    image: node:14
+    command: sh -c "npm install && npm start"
+    ports:
+      - 3000:3000
+    working_dir: /client
+    volumes:
+      - ./client:/client
+  api_server:
+    image: hseeberger/scala-sbt:8u222_1.3.5_2.13.1
+    command: sh -c "sbt run"
+    ports:
+      - 9000:9000
+    working_dir: /app
+    volumes:
+      - ./:/app

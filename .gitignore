@@ -1,0 +1,9 @@
+.DS_Store
+app/target
+logs
+node_modules
+project/target
+project/project
+target
+client/node_modules
+app/target
