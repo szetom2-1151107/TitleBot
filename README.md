@@ -4,7 +4,7 @@ Take home assignment for https://github.com/chatmeter/titlebot
 ## How to setup and run project
 1. Have Docker installed
 2. Clone repository onto local machine
-3. At the directories location, run `docker compose up -d`
+3. At the directory's location, run `docker compose up -d`
 4. Navigate to `localhost:3000` to view the project UI
 
 ---
